@@ -1,8 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { adviseeSignUpReducer } from 'pages/AdviseeSignUp/adviseeSignUpSlice';
+import { loginReducer } from 'pages/Login/loginSlice';
 
 export const store = configureStore({
-  reducer: { adviseeSignUpReducer },
+  reducer: { adviseeSignUpReducer, loginReducer },
 });
 
 export type AppDispatch = typeof store.dispatch;

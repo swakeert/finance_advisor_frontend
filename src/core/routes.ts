@@ -9,9 +9,8 @@ enum Routes {
   ERROR_40X = '/40X-unauthorized',
 }
 
-export const API_BASE_URL = 'api/v1/';
 export enum ApiRoutes {
-  OBTAIN_TOKEN = '/auth/token/obtain/',
+  LOGIN = '/auth/login/',
   REFRESH_TOKEN = '/auth/token/refresh/',
   CREATE_ADVISEE = '/advisees/',
   // READ_UPDATE_DETELE_INDIVIDUAL_ADVISEE = '/advisees/:number/',

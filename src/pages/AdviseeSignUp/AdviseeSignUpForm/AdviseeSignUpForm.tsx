@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 import {
   adviseeSignUp,
-  AdviseeSignUp,
+  AdviseeSignUpFormData,
   selectSignUpErrors,
   selectSignUpSuccess,
 } from 'pages/AdviseeSignUp/adviseeSignUpSlice';
 import { useAppSelector } from 'core/hooks';
 import { Redirect } from 'react-router-dom';
 import Routes from 'core/routes';
+import { newUser } from 'pages/Login/Login';
 
 const validationSchema = yup.object({
   email: yup
@@ -35,15 +36,15 @@ const AdviseeSignUpForm = (): React.ReactElement => {
   const signUpSuccess = useAppSelector(selectSignUpSuccess);
   const dispatch = useDispatch();
   const onSubmit = (
-    values: AdviseeSignUp,
-    actions: FormikHelpers<AdviseeSignUp>
+    values: AdviseeSignUpFormData,
+    actions: FormikHelpers<AdviseeSignUpFormData>
   ): void => {
     dispatch(adviseeSignUp(values));
     actions.setSubmitting(false);
   };
 
   return signUpSuccess ? (
-    <Redirect to={Routes.LOG_IN} />
+    <Redirect to={{ pathname: Routes.LOG_IN, state: newUser }} />
   ) : (
     <Formik
       initialValues={{ email: '', password: '', passwordConfirm: '' }}
@@ -52,20 +53,20 @@ const AdviseeSignUpForm = (): React.ReactElement => {
     >
       {({ isSubmitting, touched }) => (
         <Form>
-          <Field type="email" name="email" required="true" />
+          <Field type="email" name="email" required />
           {signUpApiErrors.email && touched.email ? (
             <div>{signUpApiErrors.email}</div>
-          ) : null}{' '}
+          ) : null}
           <ErrorMessage name="email" component="div" />
-          <Field type="password" name="password" required="true" />
+          <Field type="password" name="password" required />
           {signUpApiErrors.password && touched.password ? (
             <div>{signUpApiErrors.password}</div>
-          ) : null}{' '}
+          ) : null}
           <ErrorMessage name="password" component="div" />
-          <Field type="password" name="passwordConfirm" required="true" />
+          <Field type="password" name="passwordConfirm" required />
           {signUpApiErrors.password2 && touched.passwordConfirm ? (
             <div>{signUpApiErrors.password2}</div>
-          ) : null}{' '}
+          ) : null}
           <ErrorMessage name="passwordConfirm" component="div" />
           <button type="submit" disabled={isSubmitting}>
             Submit

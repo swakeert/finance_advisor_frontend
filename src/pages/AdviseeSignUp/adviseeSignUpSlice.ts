@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from 'core/store';
 
-import axios from 'axios';
+import axiosInstance from 'core/axiosInstance';
+import { ApiRoutes } from 'core/routes';
 
 type ApiErrors = { [key: string]: string[] };
 
@@ -36,16 +37,19 @@ export const selectSignUpErrors = (state: RootState): ApiErrors =>
 export const selectSignUpSuccess = (state: RootState): boolean | undefined =>
   state.adviseeSignUpReducer.success;
 
-export type AdviseeSignUp = {
+export type AdviseeSignUpFormData = {
   email: string;
   password: string;
   passwordConfirm: string;
 };
 export const adviseeSignUp = createAsyncThunk(
   'advisee/SignUp',
-  async ({ email, password, passwordConfirm }: AdviseeSignUp, thunkAPI) => {
+  async (
+    { email, password, passwordConfirm }: AdviseeSignUpFormData,
+    thunkAPI
+  ) => {
     try {
-      await axios.post('/api/v1/advisees/', {
+      await axiosInstance.post(ApiRoutes.CREATE_ADVISEE, {
         email,
         password,
         password2: passwordConfirm,
