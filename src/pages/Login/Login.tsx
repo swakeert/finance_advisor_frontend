@@ -2,13 +2,17 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import LoginForm from './LoginForm/LoginForm';
 
-export const newUser = 'new-user';
+export enum loginFormMessages {
+  newUser = 'Please login with your new username/ password to continue',
+  logout = 'Logged out successfully, please login again to continue',
+  notLoggedIn = 'You are not logged in, please login to continue',
+}
 
-const NewUserLoginMessage = (): React.ReactElement => (
-  <h2 className="heading">
-    Please login with your new username/ password to continue
-  </h2>
-);
+const LoginFormMessage = ({
+  message,
+}: {
+  message: string;
+}): React.ReactElement => <h2 className="heading">{message}</h2>;
 
 const Login = (): React.ReactElement => {
   const location = useLocation();
@@ -16,7 +20,7 @@ const Login = (): React.ReactElement => {
   return (
     <>
       <h1 className="heading">Login Page</h1>
-      {state === newUser ? <NewUserLoginMessage /> : null}
+      {state ? <LoginFormMessage message={state as string} /> : null}
       <LoginForm />
     </>
   );

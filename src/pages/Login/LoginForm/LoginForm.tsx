@@ -1,11 +1,17 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import { login, LoginFormData, selectLoginError } from 'pages/Login/loginSlice';
+import Routes, { ApiRoutes } from 'core/routes';
+import axiosInstance from 'core/axiosInstance';
+import { newLogin, selectIsLoggedIn } from 'core/userManagement';
 import { useAppSelector } from 'core/hooks';
-// import { Redirect } from 'react-router-dom';
-// import Routes from 'core/routes';
+import { Redirect } from 'react-router-dom';
+
+export type LoginFormData = {
+  username: string;
+  password: string;
+};
 
 const validationSchema = yup.object({
   username: yup
@@ -22,20 +28,27 @@ const validationSchema = yup.object({
 });
 
 const LoginForm = (): React.ReactElement => {
-  const signUpApiError = useAppSelector(selectLoginError);
-  // const signUpSuccess = useAppSelector(selectLoginSuccess);
   const dispatch = useDispatch();
-  const onSubmit = (
+  const [loginError, setLoginError] = useState('');
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
+  const onSubmit = async (
     values: LoginFormData,
     actions: FormikHelpers<LoginFormData>
-  ): void => {
-    dispatch(login(values));
+  ): Promise<void> => {
+    try {
+      const { data } = await axiosInstance.post(ApiRoutes.LOGIN, values);
+      dispatch(newLogin(data));
+    } catch (e) {
+      setLoginError(e.response.data.detail);
+    }
     actions.setSubmitting(false);
   };
 
-  return (
+  return isLoggedIn ? (
+    <Redirect to={{ pathname: Routes.DASHBOARD }} />
+  ) : (
     <>
-      {signUpApiError && signUpApiError}
+      {loginError && <div>{loginError}</div>}
       <Formik
         initialValues={{ username: '', password: '' }}
         validationSchema={validationSchema}

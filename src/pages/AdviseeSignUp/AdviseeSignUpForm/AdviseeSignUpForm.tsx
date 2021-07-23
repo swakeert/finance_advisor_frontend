@@ -1,17 +1,18 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 import * as yup from 'yup';
-import {
-  adviseeSignUp,
-  AdviseeSignUpFormData,
-  selectSignUpErrors,
-  selectSignUpSuccess,
-} from 'pages/AdviseeSignUp/adviseeSignUpSlice';
-import { useAppSelector } from 'core/hooks';
+
+import axiosInstance from 'core/axiosInstance';
+
 import { Redirect } from 'react-router-dom';
-import Routes from 'core/routes';
-import { newUser } from 'pages/Login/Login';
+import Routes, { ApiRoutes } from 'core/routes';
+import { loginFormMessages } from 'pages/Login/Login';
+
+export type AdviseeSignUpFormData = {
+  email: string;
+  password: string;
+  password2: string;
+};
 
 const validationSchema = yup.object({
   email: yup
@@ -25,49 +26,47 @@ const validationSchema = yup.object({
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/,
       'Must contain at least 8 Characters, one uppercase, one lowercase and one number'
     ),
-  passwordConfirm: yup
+  password2: yup
     .string()
     .required('Please confirm your password')
     .oneOf([yup.ref('password'), null], 'Passwords must match'),
 });
 
 const AdviseeSignUpForm = (): React.ReactElement => {
-  const signUpApiErrors = useAppSelector(selectSignUpErrors);
-  const signUpSuccess = useAppSelector(selectSignUpSuccess);
-  const dispatch = useDispatch();
-  const onSubmit = (
+  const [signUpWasSuccessful, setSignUpWasSuccessful] = useState(false);
+
+  const onSubmit = async (
     values: AdviseeSignUpFormData,
     actions: FormikHelpers<AdviseeSignUpFormData>
-  ): void => {
-    dispatch(adviseeSignUp(values));
+  ): Promise<void> => {
+    try {
+      await axiosInstance.post(ApiRoutes.CREATE_ADVISEE, values);
+      setSignUpWasSuccessful(true);
+    } catch (e) {
+      actions.setErrors(e.response.data);
+    }
+
     actions.setSubmitting(false);
   };
 
-  return signUpSuccess ? (
-    <Redirect to={{ pathname: Routes.LOG_IN, state: newUser }} />
+  return signUpWasSuccessful ? (
+    <Redirect
+      to={{ pathname: Routes.LOGIN, state: loginFormMessages.newUser }}
+    />
   ) : (
     <Formik
-      initialValues={{ email: '', password: '', passwordConfirm: '' }}
+      initialValues={{ email: '', password: '', password2: '' }}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      {({ isSubmitting, touched }) => (
+      {({ isSubmitting }) => (
         <Form>
           <Field type="email" name="email" required />
-          {signUpApiErrors.email && touched.email ? (
-            <div>{signUpApiErrors.email}</div>
-          ) : null}
           <ErrorMessage name="email" component="div" />
           <Field type="password" name="password" required />
-          {signUpApiErrors.password && touched.password ? (
-            <div>{signUpApiErrors.password}</div>
-          ) : null}
           <ErrorMessage name="password" component="div" />
-          <Field type="password" name="passwordConfirm" required />
-          {signUpApiErrors.password2 && touched.passwordConfirm ? (
-            <div>{signUpApiErrors.password2}</div>
-          ) : null}
-          <ErrorMessage name="passwordConfirm" component="div" />
+          <Field type="password" name="password2" required />
+          <ErrorMessage name="password2" component="div" />
           <button type="submit" disabled={isSubmitting}>
             Submit
           </button>

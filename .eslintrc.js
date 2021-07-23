@@ -53,6 +53,6 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-param-reassign': ['error', { props: false }],
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': 'warn',
   },
 };

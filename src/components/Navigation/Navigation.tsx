@@ -18,10 +18,13 @@ export default (): React.ReactElement => {
 
         {/* TODO: the following should work programatically */}
         <li>
-          <Link to={Routes.LOG_IN}>Log In</Link>
+          <Link to={Routes.LOGIN}>Login</Link>
         </li>
         <li>
           <Link to={Routes.SIGN_UP}>Sign Up</Link>
+        </li>
+        <li>
+          <Link to={Routes.LOGOUT}>Logout</Link>
         </li>
       </ul>
     </nav>

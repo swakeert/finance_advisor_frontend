@@ -8,6 +8,7 @@ import Routes from 'core/routes';
 import Navigation from 'components/Navigation/Navigation';
 import LoginPage from 'pages/Login/Login';
 import AdviseeSignUpPage from 'pages/AdviseeSignUp/AdviseeSignUp';
+import LogoutPage from 'pages/Logout/Logout';
 
 export default (): React.ReactElement => {
   return (
@@ -18,8 +19,9 @@ export default (): React.ReactElement => {
           <Route path={Routes.HOME} exact component={HomePage} />
           <Route path={Routes.ABOUT} component={AboutUsPage} />
           <Route path={Routes.CONTACT} component={ContactUsPage} />
-          <Route path={Routes.LOG_IN} component={LoginPage} />
+          <Route path={Routes.LOGIN} component={LoginPage} />
           <Route path={Routes.SIGN_UP} component={AdviseeSignUpPage} />
+          <Route path={Routes.LOGOUT} component={LogoutPage} />
         </Switch>
       </main>
     </BrowserRouter>
