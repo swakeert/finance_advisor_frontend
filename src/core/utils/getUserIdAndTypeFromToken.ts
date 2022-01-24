@@ -1,4 +1,4 @@
-export type UserType = 'advisee' | 'advisor';
+import { UserType } from 'core/userManagement';
 
 type TokenPayload = {
   // eslint-disable-next-line camelcase

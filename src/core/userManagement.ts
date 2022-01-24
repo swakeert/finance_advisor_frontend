@@ -1,15 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'core/store';
 
-import getUserIdAndTypeFromToken, {
-  UserType,
-} from './utils/getUserIdAndTypeFromToken';
+import getUserIdAndTypeFromToken from './utils/getUserIdAndTypeFromToken';
 
 export type Tokens = {
   access: string;
   refresh: string;
 };
-
+export type UserType = 'advisee' | 'advisor';
 type UserManagementState = {
   tokens?: Tokens;
   id?: number;

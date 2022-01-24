@@ -1,12 +1,10 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import Routes, { ApiRoutes } from 'core/routes';
+import { ApiRoutes } from 'core/routes';
 import axiosInstance from 'core/axiosInstance';
-import { newLogin, selectIsLoggedIn } from 'core/userManagement';
-import { useAppSelector } from 'core/hooks';
-import { Redirect } from 'react-router-dom';
+import { newLogin } from 'core/userManagement';
 
 export type LoginFormData = {
   username: string;
@@ -29,8 +27,6 @@ const validationSchema = yup.object({
 
 const LoginForm = (): React.ReactElement => {
   const dispatch = useDispatch();
-  const [loginError, setLoginError] = useState('');
-  const isLoggedIn = useAppSelector(selectIsLoggedIn);
   const onSubmit = async (
     values: LoginFormData,
     actions: FormikHelpers<LoginFormData>
@@ -39,16 +35,14 @@ const LoginForm = (): React.ReactElement => {
       const { data } = await axiosInstance.post(ApiRoutes.LOGIN, values);
       dispatch(newLogin(data));
     } catch (e) {
-      setLoginError(e.response.data.detail);
+      // TODO: Handle 404 and 5XX errors.
+      actions.setErrors(e.response.status);
     }
     actions.setSubmitting(false);
   };
 
-  return isLoggedIn ? (
-    <Redirect to={{ pathname: Routes.DASHBOARD }} />
-  ) : (
+  return (
     <>
-      {loginError && <div>{loginError}</div>}
       <Formik
         initialValues={{ username: '', password: '' }}
         validationSchema={validationSchema}

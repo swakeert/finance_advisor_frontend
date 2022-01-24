@@ -43,6 +43,7 @@ const AdviseeSignUpForm = (): React.ReactElement => {
       await axiosInstance.post(ApiRoutes.CREATE_ADVISEE, values);
       setSignUpWasSuccessful(true);
     } catch (e) {
+      // TODO: Handle 404 and 5XX errors.
       actions.setErrors(e.response.data);
     }
 
