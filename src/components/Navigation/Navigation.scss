@@ -1,0 +1,110 @@
+@import '../../variables';
+.logo {
+  height: 22px;
+}
+
+.nav-item {
+  color: $menu-item !important;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: $font-family-secondary;
+
+  &:hover {
+    color: $primary !important;
+  }
+}
+
+.navbar-custom {
+  background-color: #f2f6fa;
+  border: none;
+  padding: 10px 0px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  z-index: 9999;
+  transition: background-color 1s ease-in-out, border 1s ease-in-out;
+
+  .navbar-brand {
+    height: auto;
+  }
+}
+
+.navbar-toggle {
+  background-color: transparent !important;
+  margin-top: 14px;
+  border: none;
+}
+
+.navbar-default {
+  .navbar-toggle {
+    .icon-bar {
+      background-color: $gray-800;
+    }
+  }
+
+  .navbar-custom {
+    background-color: $white !important;
+    width: 100%;
+    box-shadow: 0 2px 2px rgba($black, 0.1);
+  }
+}
+
+/*******************
+    Responsive
+*******************/
+
+@media (min-width: 768px) {
+  .nav-item {
+    padding: 20px 15px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-custom {
+    padding: 10px 0px !important;
+
+    .navbar-brand {
+      height: auto;
+      padding: 15px 15px;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  .navbar-nav {
+    margin: 7.5px 0px;
+  }
+
+  .navbar-toggler {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 9px 10px;
+    margin-right: 15px;
+    outline: 0 !important;
+  }
+
+  .navbar-light {
+    .navbar-toggler {
+      color: $gray-800;
+      border-color: transparent;
+    }
+  }
+
+  .nav-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px !important;
+  }
+
+  .navbar-default {
+    border-bottom: 1px solid $gray-300;
+  }
+
+  .navbar-custom-dark {
+    .navbar-toggler {
+      color: $white;
+    }
+  }
+}

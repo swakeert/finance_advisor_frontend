@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import axiosInstance from 'core/axiosInstance';
 
 import { Redirect } from 'react-router-dom';
-import Routes, { ApiRoutes } from 'core/routes';
+import { GlobalRoutes, ApiRoutes } from 'core/routes';
 import { loginFormMessages } from 'pages/Login/Login';
 
 export type AdviseeSignUpFormData = {
@@ -52,7 +52,7 @@ const AdviseeSignUpForm = (): React.ReactElement => {
 
   return signUpWasSuccessful ? (
     <Redirect
-      to={{ pathname: Routes.LOGIN, state: loginFormMessages.newUser }}
+      to={{ pathname: GlobalRoutes.LOGIN, state: loginFormMessages.newUser }}
     />
   ) : (
     <Formik

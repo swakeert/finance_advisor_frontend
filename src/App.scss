@@ -1,0 +1,85 @@
+@import 'variables';
+
+body {
+  font-size: $font-size-base;
+  color: $body-color;
+  font-family: $font-family-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+::-moz-selection {
+  background: $gray-700;
+  color: $white;
+}
+
+::selection {
+  background: $gray-700;
+  color: $white;
+}
+
+// html {
+//     scroll-padding-top: 77px; /* height of sticky header */
+//   }
+
+.row > * {
+  position: relative;
+}
+
+a {
+  text-decoration: none !important;
+  transition: all 400ms ease-in-out;
+}
+
+/*******************
+    Helper
+*******************/
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 17px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

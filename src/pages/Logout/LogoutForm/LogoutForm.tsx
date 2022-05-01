@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import Routes from 'core/routes';
+import { GlobalRoutes } from 'core/routes';
 
 import { logout, selectIsLoggedIn } from 'core/userManagement';
 import { useAppSelector } from 'core/hooks';
@@ -22,7 +22,7 @@ const LogoutForm = (): React.ReactElement => {
     ? loginFormMessages.logout
     : loginFormMessages.notLoggedIn;
   return !isLoggedIn ? (
-    <Redirect to={{ pathname: Routes.LOGIN, state: loginFormMessage }} />
+    <Redirect to={{ pathname: GlobalRoutes.LOGIN, state: loginFormMessage }} />
   ) : (
     <form onSubmit={onSubmit}>
       <button type="submit">Logout</button>

@@ -1,5 +1,5 @@
 import { useAppSelector } from 'core/hooks';
-import Routes from 'core/routes';
+import { DashboardRoutes } from 'core/routes';
 import { selectIsLoggedIn } from 'core/userManagement';
 import React from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
@@ -24,7 +24,7 @@ const Login = (): React.ReactElement => {
   const isLoggedIn = useAppSelector(selectIsLoggedIn);
 
   return isLoggedIn ? (
-    <Redirect to={{ pathname: Routes.DASHBOARD }} />
+    <Redirect to={{ pathname: DashboardRoutes.DASHBOARD }} />
   ) : (
     <>
       <h1 className="heading">Login Page</h1>

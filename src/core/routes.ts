@@ -1,13 +1,16 @@
-enum Routes {
+export enum GlobalRoutes {
   HOME = '/',
   ABOUT = '/about-us',
   CONTACT = '/contact-us',
   LOGIN = '/login',
   SIGN_UP = '/sign-up',
-  LOGOUT = '/logout',
-  DASHBOARD = '/dashboard',
   ERROR_404 = '/404-not-found',
   ERROR_40X = '/40X-unauthorized',
+}
+
+export enum DashboardRoutes {
+  LOGOUT = '/logout',
+  DASHBOARD = '/dashboard',
 }
 
 export enum ApiRoutes {
@@ -16,9 +19,7 @@ export enum ApiRoutes {
   CREATE_ADVISEE = '/advisees/',
   // READ_UPDATE_DETELE_INDIVIDUAL_ADVISEE = '/advisees/:number/',
   // ADVISEE_INDIVIDUAL_GOALS = '/advisees/:number/goals/',
-  // API_SOMETHIGN = '/advisees/<int:advisee_id>/',
-  // API_SOMETHIGN = '/advisors/',
-  // API_SOMETHIGN = '/core/',
+  // API_SOMETHING = '/advisees/<int:advisee_id>/',
+  // API_SOMETHING = '/advisors/',
+  // API_SOMETHING = '/core/',
 }
-
-export default Routes;
