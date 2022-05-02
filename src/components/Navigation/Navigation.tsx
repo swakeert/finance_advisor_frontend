@@ -24,7 +24,7 @@ export default (): React.ReactElement => {
           data-bs-target="#navbarCollapse"
           aria-label="Toggle navigation"
         />
-        <Navbar.Collapse id="navbarCollapse">
+        <Navbar.Collapse id="navbarCollapse" className="justify-content-end">
           <Nav>
             <Nav.Item>
               <Nav.Link as={Link} to={GlobalRoutes.HOME} eventKey="home">
