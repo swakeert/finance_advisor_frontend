@@ -27,22 +27,34 @@ export default (): React.ReactElement => {
         <Navbar.Collapse id="navbarCollapse">
           <Nav>
             <Nav.Item>
-              <NavLink to={GlobalRoutes.HOME}>Home</NavLink>
+              <Nav.Link as={Link} to={GlobalRoutes.HOME} eventKey="home">
+                Home
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <NavLink to={GlobalRoutes.ABOUT}>About Us</NavLink>
+              <Nav.Link as={Link} to={GlobalRoutes.ABOUT} eventKey="about">
+                About Us
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <NavLink to={GlobalRoutes.CONTACT}>Contact Us</NavLink>
+              <Nav.Link as={Link} to={GlobalRoutes.CONTACT} eventKey="contact">
+                Contact Us
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <NavLink to={GlobalRoutes.LOGIN}>Login</NavLink>
+              <Nav.Link as={Link} to={GlobalRoutes.LOGIN} eventKey="login">
+                Login
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <NavLink to={GlobalRoutes.SIGN_UP}>Sign Up</NavLink>
+              <Nav.Link as={Link} to={GlobalRoutes.SIGN_UP} eventKey="signup">
+                Sign Up
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <NavLink to={DashboardRoutes.LOGOUT}>Logout</NavLink>
+              <Nav.Link as={Link} to={DashboardRoutes.LOGOUT} eventKey="logout">
+                Logout
+              </Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
