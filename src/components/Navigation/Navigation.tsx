@@ -1,14 +1,13 @@
 import { DashboardRoutes, GlobalRoutes } from 'core/routes';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navigation.scss';
 
 export default (): React.ReactElement => {
   return (
     <Navbar
       collapseOnSelect
-      bg="light"
       expand="lg"
       sticky="top"
       className="navbar-custom navbar-default"

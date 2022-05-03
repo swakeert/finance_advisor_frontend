@@ -1,9 +1,15 @@
 import React from 'react';
+import Banner from './Banner/Banner';
+import Features from './Features/Features';
 import './Home.scss';
 
 const Home = (): React.ReactElement => {
   return (
     <>
+      <Banner />
+
+      <Features />
+
       <h1 className="heading">Home Page</h1>
 
       <div className="home-dummy-content">
