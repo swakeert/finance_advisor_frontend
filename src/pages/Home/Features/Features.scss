@@ -1,8 +1,5 @@
 // TODO: Use absolute paths
 @import '../../../variables';
-/******************
-    Features
-*******************/
 
 .features {
   padding: 100px 0;
@@ -52,4 +49,16 @@
   .features {
     padding: 10px 0px;
   }
+}
+
+.features-title {
+  margin-top: 0px;
+  font-size: 26px;
+}
+
+.features-description {
+  color: #767d8e;
+  line-height: 24px;
+  margin: 0px auto 50px auto;
+  font-size: 15px;
 }

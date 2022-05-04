@@ -4,15 +4,9 @@ import './Features.scss';
 import {
   FaChartPie,
   FaRegCalendarCheck,
-  FaRocket,
   FaUmbrellaBeach,
 } from 'react-icons/fa';
-import {
-  GiRockingChair,
-  GiStairsGoal,
-  GiTeacher,
-  GiUmbrella,
-} from 'react-icons/gi';
+import { GiStairsGoal, GiTeacher, GiUmbrella } from 'react-icons/gi';
 import { Card } from 'react-bootstrap';
 
 type FeatureCardProps = {
@@ -46,6 +40,19 @@ const Features = (): React.ReactElement => {
     <>
       <section className="section features" id="features">
         <div className="container">
+          <div className="row">
+            <div className="col-sm-12 text-center">
+              <h2 className="features-title">
+                What a financial advisor will do for you
+              </h2>
+              <p className="features-description">
+                {/* An advisor will get to know you as a person and understand your
+                financial journey. They will then analyse all aspects of your
+                financial health and come up with a plan to achieve your goals. */}
+              </p>
+            </div>
+          </div>
+
           <div className="row justify-content-center">
             <FeatureCard
               title="Goal based investing"
@@ -78,11 +85,11 @@ const Features = (): React.ReactElement => {
               icon={<FaChartPie />}
             />
 
-            <FeatureCard
+            {/* <FeatureCard
               title="Follow ups"
               body="An advisor will monitor your portfolio and regularly check in to make sure you are on track to meet your goals."
               icon={<FaRegCalendarCheck />}
-            />
+            /> */}
           </div>
         </div>
       </section>

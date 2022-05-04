@@ -1,0 +1,68 @@
+// TODO: Use absolute paths
+@import '../../../variables';
+
+.process {
+  padding: 100px 0;
+
+  h4 {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .process {
+    padding: 10px 0px;
+  }
+}
+
+.process-title {
+  margin-top: 0px;
+  font-size: 26px;
+}
+
+.process-description {
+  color: #767d8e;
+  line-height: 24px;
+  margin: 0px auto 50px auto;
+  font-size: 15px;
+}
+
+.item-list-right.item-list-big li {
+  padding: 0 70px 30px 0;
+  list-style: none;
+}
+
+.item-list-right li {
+  padding: 0 60px 20px 0;
+  position: relative;
+  text-align: right;
+}
+
+.item-list-right li .number {
+  right: 0;
+  top: 0;
+}
+
+.item-list-left.item-list-big li {
+  padding: 0 0px 30px 70px;
+  list-style: none;
+}
+
+.item-list-left li .number {
+  left: 0;
+}
+
+.item-list-big .number {
+  height: 42px;
+  width: 42px;
+  line-height: 32px;
+  color: #ffffff;
+  background: #3d62e0;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
