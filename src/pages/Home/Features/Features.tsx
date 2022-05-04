@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './Features.scss';
 
-import { FaRocket } from 'react-icons/fa';
+import {
+  FaChartPie,
+  FaRegCalendarCheck,
+  FaRocket,
+  FaUmbrellaBeach,
+} from 'react-icons/fa';
+import {
+  GiRockingChair,
+  GiStairsGoal,
+  GiTeacher,
+  GiUmbrella,
+} from 'react-icons/gi';
 import { Card } from 'react-bootstrap';
+
+type FeatureCardProps = {
+  title: string;
+  body: string;
+  icon: ReactNode;
+};
+
+const FeatureCard = ({
+  title,
+  body,
+  icon,
+}: FeatureCardProps): React.ReactElement => (
+  <>
+    <div className="col-lg-4 col-sm-6">
+      <Card bg="light">
+        <div className="d-flex">
+          <div className="flex-shrink-0 me-4">{icon}</div>
+          <div className="flex-grow-1">
+            <Card.Title>{title}</Card.Title>
+            <Card.Body>{body}</Card.Body>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </>
+);
 
 const Features = (): React.ReactElement => {
   return (
@@ -10,86 +47,42 @@ const Features = (): React.ReactElement => {
       <section className="section features" id="features">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-sm-6">
-              <Card>
-                <div className="d-flex">
-                  <div className="flex-shrink-0 me-4">
-                    <FaRocket />
-                  </div>
-                  <div className="flex-grow-1">
-                    <Card.Title>Strategy Solutions</Card.Title>
-                    <Card.Body>
-                      We put a lot of effort in design, as it’s the ut
-                      perspiciatis unde omnis iste natus error sit.
-                    </Card.Body>
-                  </div>
-                </div>
-              </Card>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <Card>
-                <div className="d-flex">
-                  <div className="flex-shrink-0 me-4">
-                    <FaRocket />
-                  </div>
-                  <div className="flex-grow-1">
-                    <Card.Title>Strategy Solutions</Card.Title>
-                    <Card.Body>
-                      We put a lot of effort in design, as it’s the ut
-                      perspiciatis unde omnis iste natus error sit.
-                    </Card.Body>
-                  </div>
-                </div>
-              </Card>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <Card>
-                <div className="d-flex">
-                  <div className="flex-shrink-0 me-4">
-                    <FaRocket />
-                  </div>
-                  <div className="flex-grow-1">
-                    <Card.Title>Strategy Solutions</Card.Title>
-                    <Card.Body>
-                      We put a lot of effort in design, as it’s the ut
-                      perspiciatis unde omnis iste natus error sit.
-                    </Card.Body>
-                  </div>
-                </div>
-              </Card>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <Card>
-                <div className="d-flex">
-                  <div className="flex-shrink-0 me-4">
-                    <FaRocket />
-                  </div>
-                  <div className="flex-grow-1">
-                    <Card.Title>Strategy Solutions</Card.Title>
-                    <Card.Body>
-                      We put a lot of effort in design, as it’s the ut
-                      perspiciatis unde omnis iste natus error sit.
-                    </Card.Body>
-                  </div>
-                </div>
-              </Card>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <Card>
-                <div className="d-flex">
-                  <div className="flex-shrink-0 me-4">
-                    <FaRocket />
-                  </div>
-                  <div className="flex-grow-1">
-                    <Card.Title>Strategy Solutions</Card.Title>
-                    <Card.Body>
-                      We put a lot of effort in design, as it’s the ut
-                      perspiciatis unde omnis iste natus error sit.
-                    </Card.Body>
-                  </div>
-                </div>
-              </Card>
-            </div>
+            <FeatureCard
+              title="Goal based investing"
+              body="An advisor will work with you to understand your goals and
+                      create a systematic investing plan (SIP) to achieve them."
+              icon={<GiStairsGoal />}
+            />
+
+            <FeatureCard
+              title="Insurance Planning"
+              body="An advisor will make sure you have adequte insurance cover so that life's uncertainities don't stop you from meeting your goals."
+              icon={<GiUmbrella />}
+            />
+
+            <FeatureCard
+              title="Retirement Planning"
+              body="An advisor will help you start a retirement fund to achieve maximum compounding effects for an easy retirement."
+              icon={<FaUmbrellaBeach />}
+            />
+
+            <FeatureCard
+              title="Financial knowledge"
+              body="An advisor will teach you about various financial instruments and make sure you only invest in what you understand."
+              icon={<GiTeacher />}
+            />
+
+            <FeatureCard
+              title="Risk management"
+              body="An advisor will understand your risk appetite and make sure your wealth is diversified accordingly."
+              icon={<FaChartPie />}
+            />
+
+            <FeatureCard
+              title="Follow ups"
+              body="An advisor will monitor your portfolio and regularly check in to make sure you are on track to meet your goals."
+              icon={<FaRegCalendarCheck />}
+            />
           </div>
         </div>
       </section>

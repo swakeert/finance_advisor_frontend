@@ -20,14 +20,13 @@ const Banner = (): React.ReactElement => {
                 <p>
                   {/* Work with a financial advisor to create a personalised
                   financial plan to make your money work for you. */}
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas nec justo et dolor convallis condimentum ac et nisi.
-                  Fusce ullamcorper sollicitudin felis, sit amet sollicitudin
-                  elit.
+                  Connect with a SEBI approved, fee only financial advisor to
+                  create a financial plan peronalised to your situation and to
+                  meet your individual goals.
                 </p>
 
-                <Button variant="dark" href="#" className="get-started-cta">
-                  Get Started <FaArrowRight />
+                <Button variant="dark" href="#" className="banner-cta">
+                  Find an advisor <FaArrowRight />
                 </Button>
               </div>
             </div>

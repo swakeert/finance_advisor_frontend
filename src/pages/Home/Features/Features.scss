@@ -14,6 +14,7 @@
     border-radius: 7px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
+    box-shadow: none;
   }
 
   .card-title {
@@ -22,8 +23,8 @@
 
   .card-body {
     line-height: 24px;
-    width: 85%;
-    margin: 10px auto;
+    padding: 0;
+    color: #98a6ad;
   }
 
   svg {
