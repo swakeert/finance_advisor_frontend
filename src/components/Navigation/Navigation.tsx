@@ -1,6 +1,6 @@
 import { DashboardRoutes, GlobalRoutes } from 'core/routes';
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Navigation.scss';
 
@@ -14,7 +14,7 @@ export default (): React.ReactElement => {
     >
       <Container>
         <Navbar.Brand as={Link} to={GlobalRoutes.HOME}>
-          <img src="logo512.png" className="logo" alt="Logo" />
+          <Image src="logo512.png" className="logo" alt="Logo" />
         </Navbar.Brand>
 
         <Navbar.Toggle

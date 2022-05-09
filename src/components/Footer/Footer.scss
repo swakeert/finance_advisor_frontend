@@ -1,0 +1,95 @@
+// TODO: Use absolute paths
+@import '../../variables';
+
+.footer {
+  padding: 20px 0px;
+  border-top: 1px solid #3b3b40;
+  background-color: $dark;
+  color: #98a6ad;
+  padding-top: 40px;
+  padding-bottom: 0px;
+
+  .copyright {
+    color: #98a6ad;
+    margin: 0px;
+  }
+
+  h5 {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .about-text {
+    padding-right: 20px;
+    line-height: 22px;
+    margin-top: 10px;
+  }
+
+  a {
+    color: #98a6ad;
+    line-height: 28px;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  ul li {
+    margin: 5px 0px;
+  }
+
+  .footer-alt {
+    margin-top: 20px;
+    padding: 20px 0px;
+    border-top: 1px solid #3b3b40;
+  }
+
+  .footer-alt .copyright {
+    line-height: 34px;
+  }
+
+  .footer-social-one {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
+  .footer-social-one li {
+    padding: 0;
+    margin: 0 2px;
+    float: right;
+  }
+
+  .footer-social-one a {
+    border-radius: 50%;
+    text-align: center;
+    background-color: #3d444b;
+    width: 34px;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+  }
+
+  .footer-social-one a:hover {
+    color: #ffffff;
+    background-color: #3d62e0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    h5 {
+      margin-top: 10px;
+    }
+    .footer-alt {
+      text-align: center;
+    }
+    .footer-alt .footer-social-one {
+      margin-top: 10px;
+    }
+    .footer-alt .footer-social-one li {
+      float: none;
+    }
+  }
+}

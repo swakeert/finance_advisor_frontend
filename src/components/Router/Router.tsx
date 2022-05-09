@@ -9,12 +9,13 @@ import Navigation from 'components/Navigation/Navigation';
 import LoginPage from 'pages/Login/Login';
 import AdviseeSignUpPage from 'pages/AdviseeSignUp/AdviseeSignUp';
 import LogoutPage from 'pages/Logout/Logout';
+import Footer from 'components/Footer/Footer';
 
 export default (): React.ReactElement => {
   return (
     <BrowserRouter>
+      <Navigation />
       <main>
-        <Navigation />
         <Switch>
           <Route path={GlobalRoutes.HOME} exact component={HomePage} />
           <Route path={GlobalRoutes.ABOUT} component={AboutUsPage} />
@@ -26,6 +27,7 @@ export default (): React.ReactElement => {
           <Route path={DashboardRoutes.LOGOUT} component={LogoutPage} />
         </Switch>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 };

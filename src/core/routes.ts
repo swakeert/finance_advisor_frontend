@@ -4,6 +4,8 @@ export enum GlobalRoutes {
   CONTACT = '/contact-us',
   LOGIN = '/login',
   SIGN_UP = '/sign-up',
+  PRIVACY_POLICY = '/privacy-policy',
+  TERMS_AND_CONDITIONS = '/terms-and-conditions',
   ERROR_404 = '/404-not-found',
   ERROR_40X = '/40X-unauthorized',
 }
