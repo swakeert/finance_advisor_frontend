@@ -57,7 +57,7 @@ const Features = (): React.ReactElement => {
             <FeatureCard
               title="Goal based investing"
               body="An advisor will work with you to understand your goals and
-                      create a systematic investing plan (SIP) to achieve them."
+                      create a systematic financial plan to achieve them."
               icon={<GiStairsGoal />}
             />
 
