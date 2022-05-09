@@ -7,7 +7,7 @@ import { Button, Row, Col, Container } from 'react-bootstrap';
 const Banner = (): React.ReactElement => {
   return (
     <>
-      <section className="section home" id="home">
+      <section className="home-banner-section">
         <Container>
           <Row className="justify-content-center">
             <Col lg="7">
@@ -34,7 +34,7 @@ const Banner = (): React.ReactElement => {
         </Container>
       </section>
       <div className="position-relative">
-        <div className="shape overflow-hidden text-white">
+        <div className="home-banner-shape overflow-hidden text-white">
           <svg
             viewBox="0 0 2880 48"
             fill="none"

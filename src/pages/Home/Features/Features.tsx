@@ -39,14 +39,14 @@ const FeatureCard = ({
 const Features = (): React.ReactElement => {
   return (
     <>
-      <section className="section features" id="features">
+      <section className="home-section features">
         <Container>
           <Row>
             <Col sm="12" className="text-center">
-              <h2 className="features-title">
+              <h2 className="home-section-title">
                 What a financial advisor will do for you
               </h2>
-              <p className="features-description">
+              <p className="home-section-description">
                 {/* An advisor will get to know you as a person and understand your
                 financial journey. They will then analyse all aspects of your
                 financial health and come up with a plan to achieve your goals. */}

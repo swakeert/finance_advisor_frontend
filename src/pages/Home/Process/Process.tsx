@@ -27,12 +27,12 @@ const ProcessStep = ({
 const Process = (): React.ReactElement => {
   return (
     <>
-      <section className="section bg-light process" id="process">
+      <section className="home-section bg-light process" id="process">
         <Container>
           <Row>
             <Col sm="12" className="text-center">
-              <h2 className="process-title">How it works</h2>
-              <p className="process-description">
+              <h2 className="home-section-title">How it works</h2>
+              <p className="home-section-description">
                 {/* Working with a financial advisor is a simple three step process */}
               </p>
             </Col>
