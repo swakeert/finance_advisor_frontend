@@ -2,15 +2,15 @@ import React from 'react';
 import './Banner.scss';
 
 import { FaArrowRight } from 'react-icons/fa';
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col, Container } from 'react-bootstrap';
 
 const Banner = (): React.ReactElement => {
   return (
     <>
       <section className="section home" id="home">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-7">
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg="7">
               <div className="home-wrapper text-center">
                 <div className="text-tran-box">
                   <h1 className="text-transparent">
@@ -29,9 +29,9 @@ const Banner = (): React.ReactElement => {
                   Find an advisor <FaArrowRight />
                 </Button>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       <div className="position-relative">
         <div className="shape overflow-hidden text-white">

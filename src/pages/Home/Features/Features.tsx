@@ -1,13 +1,14 @@
 import React, { ReactNode } from 'react';
 import './Features.scss';
 
+import { FaChartPie, FaUmbrellaBeach } from 'react-icons/fa';
 import {
-  FaChartPie,
-  FaRegCalendarCheck,
-  FaUmbrellaBeach,
-} from 'react-icons/fa';
-import { GiStairsGoal, GiTeacher, GiUmbrella } from 'react-icons/gi';
-import { Card } from 'react-bootstrap';
+  GiCalculator,
+  GiStairsGoal,
+  GiTeacher,
+  GiUmbrella,
+} from 'react-icons/gi';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 
 type FeatureCardProps = {
   title: string;
@@ -39,9 +40,9 @@ const Features = (): React.ReactElement => {
   return (
     <>
       <section className="section features" id="features">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 text-center">
+        <Container>
+          <Row>
+            <Col sm="12" className="text-center">
               <h2 className="features-title">
                 What a financial advisor will do for you
               </h2>
@@ -50,14 +51,13 @@ const Features = (): React.ReactElement => {
                 financial journey. They will then analyse all aspects of your
                 financial health and come up with a plan to achieve your goals. */}
               </p>
-            </div>
-          </div>
+            </Col>
+          </Row>
 
-          <div className="row justify-content-center">
+          <Row className="justify-content-center row-flex">
             <FeatureCard
               title="Goal based investing"
-              body="An advisor will work with you to understand your goals and
-                      create a systematic financial plan to achieve them."
+              body="An advisor will work with you to understand your short and long term goals and create a financial plan to achieve them."
               icon={<GiStairsGoal />}
             />
 
@@ -81,17 +81,17 @@ const Features = (): React.ReactElement => {
 
             <FeatureCard
               title="Risk management"
-              body="An advisor will understand your risk appetite and make sure your wealth is diversified accordingly."
+              body="An advisor will understand your assets, liabilities and risk appetite to help you diversify your wealth accordingly."
               icon={<FaChartPie />}
             />
 
-            {/* <FeatureCard
-              title="Follow ups"
-              body="An advisor will monitor your portfolio and regularly check in to make sure you are on track to meet your goals."
-              icon={<FaRegCalendarCheck />}
-            /> */}
-          </div>
-        </div>
+            <FeatureCard
+              title="Tax planning"
+              body="An advisor will help you structure your finances and plan transactions for maximum tax efficiency."
+              icon={<GiCalculator />}
+            />
+          </Row>
+        </Container>
       </section>
     </>
   );
