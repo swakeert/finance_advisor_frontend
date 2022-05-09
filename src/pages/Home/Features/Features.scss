@@ -1,11 +1,6 @@
 // TODO: Use absolute paths
 @import '../../../variables';
 
-.row-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .features {
   padding: 100px 0;
 
@@ -19,7 +14,7 @@
     height: 100%;
   }
 
-  .col-lg-4 {
+  .feature-card-column {
     margin-bottom: 1.5rem;
   }
 

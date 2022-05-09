@@ -1,157 +1,100 @@
 import React from 'react';
-import { Card, Image } from 'react-bootstrap';
-import { FaRocket } from 'react-icons/fa';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import './Process.scss';
 
-// type ProcessCardProps = {
-//   title: string;
-//   body: string;
-//   cardNumber: number;
-// };
+type ProcessStepProps = {
+  stepNumber: number;
+  title: string;
+  body: string;
+};
 
-// const ProcessCard = ({
-//   title,
-//   body,
-//   cardNumber,
-// }: ProcessCardProps): React.ReactElement => (
-//   <>
-//     <div className="col-sm-4">
-//       <Card bg="light" className="text-center">
-//         <div className="avatar-xl mx-auto mb-4">
-//           <div className="avatar-title text-primary h4 m-0 box-shadow rounded-circle bg-white">
-//             {cardNumber}
-//           </div>
-//         </div>
-//         <Card.Title>{title}</Card.Title>
-//         <Card.Body>{body}</Card.Body>
-//       </Card>
-//     </div>
-//   </>
-// );
-
-// const Process = (): React.ReactElement => {
-//   return (
-//     <>
-//       <section className="section bg-light process" id="process">
-//         <div className="container">
-//           <div className="row">
-//             <div className="col-sm-12 text-center">
-//               <h2 className="process-title">Simple Process</h2>
-//               <p className="process-description">
-//                 {/* Working with a financial advisor is a simple three step process */}
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="row">
-//             <ProcessCard
-//               title="Initial Consultation"
-//               body="In the initial consultation, your advisor will get to know your financial journey and goals."
-//               cardNumber={1}
-//             />
-//             <ProcessCard
-//               title="Initial Consultation"
-//               body="In the initial consultation, your advisor will get to know your financial journey and goals."
-//               cardNumber={1}
-//             />
-//             <ProcessCard
-//               title="Initial Consultation"
-//               body="In the initial consultation, your advisor will get to know your financial journey and goals."
-//               cardNumber={1}
-//             />
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   );
-// };
+const ProcessStep = ({
+  stepNumber,
+  title,
+  body,
+}: ProcessStepProps): React.ReactElement => (
+  <>
+    <Col lg="6">
+      <Card bg="light">
+        <span className="number">{stepNumber}</span>
+        <Card.Title>{title}</Card.Title>
+        <Card.Body>{body}</Card.Body>
+      </Card>
+    </Col>
+  </>
+);
 
 const Process = (): React.ReactElement => {
   return (
     <>
       <section className="section bg-light process" id="process">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 text-center">
-              <h2 className="process-title">Simple Process</h2>
+        <Container>
+          <Row>
+            <Col sm="12" className="text-center">
+              <h2 className="process-title">How it works</h2>
               <p className="process-description">
                 {/* Working with a financial advisor is a simple three step process */}
               </p>
-            </div>
-          </div>
+            </Col>
+          </Row>
 
-          <div className="row">
-            <div className="col-lg-4">
-              <ul className="item-list-right item-list-big list-unstyled">
-                <li>
-                  <span className="number">1</span>
-                  <h4>Unlimated Lifetime</h4>
-                  <p className="text-muted">
-                    Your project looks great on any device. Content can be
-                    easily read and a user understands freely what you wanted to
-                    say him or her.
-                  </p>
-                </li>
-                <li>
-                  <span className="number">2</span>
-                  <h4>Our Mission</h4>
-                  <p className="text-muted">
-                    Your project looks great on any device. Content can be
-                    easily read and a user understands freely what you wanted to
-                    say him or her.
-                  </p>
-                </li>
-                <li>
-                  <span className="number">3</span>
-                  <h4>Find Your Docs</h4>
-                  <p className="text-muted">
-                    Your project looks great on any device. Content can be
-                    easily read and a user understands freely what you wanted to
-                    say him or her.
-                  </p>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-lg-4 order-lg-4">
-              <ul className="item-list-left item-list-big list-unstyled">
-                <li>
-                  <span className="number">4</span>
-                  <h4>Calculate Your Coins</h4>
-                  <p className="text-muted">
-                    Your project looks great on any device. Content can be
-                    easily read and a user understands freely what you wanted to
-                    say him or her.
-                  </p>
-                </li>
-                <li>
-                  <span className="number">5</span>
-                  <h4>Great App Musics</h4>
-                  <p className="text-muted">
-                    Your project looks great on any device. Content can be
-                    easily read and a user understands freely what you wanted to
-                    say him or her.
-                  </p>
-                </li>
-                <li>
-                  <span className="number">6</span>
-                  <h4>Take Your Coffe</h4>
-                  <p className="text-muted">
-                    Your project looks great on any device. Content can be
-                    easily read and a user understands freely what you wanted to
-                    say him or her.
-                  </p>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-lg-4">
-              <div className="text-center d-none d-sm-block">
-                <Image src="home-rocket-graphic.png" />
-              </div>
-            </div>
-          </div>
-        </div>
+          <Row>
+            <ProcessStep
+              stepNumber={1}
+              title="Find an advisor"
+              body="In the initial consultation, you will get to know each
+                    other&#39;s financial journey and goals. In your first
+                    consultation with an advisor, you and the advisor will
+                    explain your respective backgrounds and experiences. The
+                    advisor would then explain what working with them would be
+                    like and quote their fees."
+            />
+            <ProcessStep
+              stepNumber={2}
+              title="Initial consultation"
+              body="In the initial consultation, you will get to know each
+                    other&#39;s financial journey and goals. In your first
+                    consultation with an advisor, you and the advisor will
+                    explain your respective backgrounds and experiences. The
+                    advisor would then explain what working with them would be
+                    like and quote their fees."
+            />
+            <ProcessStep
+              stepNumber={3}
+              title="Sign contract and pay fees"
+              body="In the initial consultation, you will get to know each
+                    explain your respective backgrounds and experiences. The
+                    advisor would then explain what working with them would be
+                    like and quote their fees."
+            />
+            <ProcessStep
+              stepNumber={4}
+              title="Risk assessment and information sharing"
+              body="In the initial consultation, you will get to know each
+                    other&#39;s financial journey and goals. In your first
+                    consultation with an advisor, you and the advisor will
+                    explain your respective backgrounds and experiences. The
+                    advisor would then explain what working with them would be
+                    like and quote their fees."
+            />
+            <ProcessStep
+              stepNumber={5}
+              title="Hollistic Financial plan and next steps"
+              body="In the initial consultation, you will get to know each
+                    other&#39;s financial journey and goals. In your first
+                    consultation with an advisor, you and the advisor will
+                    explain your respective backgrounds and experiences. The
+                    advisor would then explain what working with them would be
+                    like and quote their fees."
+            />
+            <ProcessStep
+              stepNumber={6}
+              title="Regular follow ups"
+              body="An advisor will monitor your portfolio and regularly check
+                    in to make sure you are on track to meet your goals."
+            />
+          </Row>
+        </Container>
       </section>
     </>
   );

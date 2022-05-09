@@ -22,7 +22,7 @@ const FeatureCard = ({
   icon,
 }: FeatureCardProps): React.ReactElement => (
   <>
-    <div className="col-lg-4 col-sm-6">
+    <Col lg="4" sm="6" className="feature-card-column">
       <Card bg="light">
         <div className="d-flex">
           <div className="flex-shrink-0 me-4">{icon}</div>
@@ -32,7 +32,7 @@ const FeatureCard = ({
           </div>
         </div>
       </Card>
-    </div>
+    </Col>
   </>
 );
 
@@ -54,7 +54,7 @@ const Features = (): React.ReactElement => {
             </Col>
           </Row>
 
-          <Row className="justify-content-center row-flex">
+          <Row className="justify-content-center ">
             <FeatureCard
               title="Goal based investing"
               body="An advisor will work with you to understand your short and long term goals and create a financial plan to achieve them."
