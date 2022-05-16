@@ -2,6 +2,10 @@
 @import '../../variables';
 
 .footer {
+  .logo {
+    height: 22px;
+  }
+
   padding: 20px 0px;
   border-top: 1px solid #3b3b40;
   background-color: $dark;
