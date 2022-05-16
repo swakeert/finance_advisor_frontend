@@ -4,6 +4,7 @@ import Faq from './Faq/Faq';
 import Features from './Features/Features';
 import './Home.scss';
 import Process from './Process/Process';
+import Testimonials from './Testimonials/Testimonials';
 
 const Home = (): React.ReactElement => {
   return (
@@ -15,6 +16,8 @@ const Home = (): React.ReactElement => {
       <Process />
 
       <Faq />
+
+      <Testimonials />
     </>
   );
 };
