@@ -47,9 +47,10 @@ const Features = (): React.ReactElement => {
                 What a financial advisor will do for you
               </h2>
               <p className="home-section-description">
-                {/* An advisor will get to know you as a person and understand your
-                financial journey. They will then analyse all aspects of your
-                financial health and come up with a plan to achieve your goals. */}
+                A Fee Only Financial Planner has a fiduciary responsibility to
+                provide unbiased and personalised advice. The planner does not
+                receive any commissions from the products or services
+                recommended.
               </p>
             </Col>
           </Row>

@@ -1,13 +1,7 @@
 import { GlobalRoutes } from 'core/routes';
 import React from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaLinkedinIn,
-  FaTwitter,
-} from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
 

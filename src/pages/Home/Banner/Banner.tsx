@@ -1,8 +1,8 @@
 import React from 'react';
 import './Banner.scss';
 
-import { FaArrowRight } from 'react-icons/fa';
-import { Button, Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
+import FindAdvisorCTA from 'components/FindAdvisorCTA/FindAdvisorCTA';
 
 const Banner = (): React.ReactElement => {
   return (
@@ -25,9 +25,7 @@ const Banner = (): React.ReactElement => {
                   meet your individual goals.
                 </p>
 
-                <Button variant="dark" href="#" className="banner-cta">
-                  Find an advisor <FaArrowRight />
-                </Button>
+                <FindAdvisorCTA />
               </div>
             </Col>
           </Row>

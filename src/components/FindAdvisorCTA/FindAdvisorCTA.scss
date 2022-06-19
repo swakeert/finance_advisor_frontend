@@ -1,0 +1,22 @@
+// TODO: Use absolute paths
+@import '../../variables';
+
+.find-advisor-cta button {
+  margin-top: 20px;
+  font-size: 12px;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.modal {
+  .modal-header {
+    background-color: #f2f6fa;
+    border-bottom: none;
+  }
+
+  .modal-footer {
+    border-top: none;
+  }
+}
